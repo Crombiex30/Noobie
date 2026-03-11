@@ -9068,9 +9068,12 @@ void idMultiplayerGame::OpenLocalBuyMenu( void )
 
 	if ( currentMenu == 4 )
 		return; // Already open
-
+	
+	
 	gameLocal.sessionCommand = "game_startmenu";
 	gameLocal.mpGame.nextMenu = 4;
+
+	
 }
 
 /*	
@@ -9117,9 +9120,7 @@ idMultiplayerGame::IsBuyingAllowedInTheCurrentGameMode
 ================
 */
 bool idMultiplayerGame::IsBuyingAllowedInTheCurrentGameMode( void ) {
-	if ( !gameLocal.isMultiplayer ) {
-		return false;
-	}
+	
 
 	if ( gameLocal.gameType != GAME_TOURNEY ) {
 		return gameLocal.serverInfo.GetBool( "si_isBuyingEnabled" );
